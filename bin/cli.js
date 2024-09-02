@@ -34,7 +34,7 @@ if (fs.existsSync(PID_FILE)) {
     onError(`Pid file "${PID_FILE}" already exists`);
 }
 
-fs.writeFileSync(PID_FILE, process.pid);
+fs.writeFileSync(PID_FILE, process.pid.toString());
 
 process.on('beforeExit', () => onExit);
 process.on('exit', () => onExit);
